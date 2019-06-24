@@ -1,0 +1,79 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd"
+    >
+<html lang="en">
+<head>
+    <title>Nuevo Curso</title>  
+</head>
+
+<header>
+  <nav class="be-red white">
+    <ul class = "no-list row center-xs">
+     <li class ="col-md">
+      <a href="/cursos">Lista de cursos</a>
+     </li>
+     <li class ="col-md">
+      <%= link_to 'Agregar Aula', new_aula_path %>
+     </li>
+    </ul>
+  </nav>
+</header>
+
+<body>
+<%= form_with(model: curso, local: true) do |form| %>
+  <% if curso.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(curso.errors.count, "error") %> prohibited this curso from being saved:</h2>
+
+      <ul>
+      <% curso.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <div id="wrapper">
+        <form action="" method="post">
+            <fieldset>
+                <legend>NUEVO CURSO</legend>
+                <div class="field">
+                <%= form.label :nombre %>
+                <%= form.text_field :nombre %>
+              </div>
+
+              <div class="field">
+                <%= form.label :carrera %>
+                <%= form.select(:carrera, Curso::CLASS_LIST_CARRERA) %>
+              </div>
+
+              <div class="field">
+                <%= form.label :cantidadalumnos %>
+                <%= form.number_field :cantidadalumnos %>
+              </div>
+
+              <div class="field">
+                <%= form.label :turno %>
+                <%= form.select(:turno, Curso::CLASS_LIST_TURNO) %>
+              </div>
+
+              <div class="field">
+                <%= form.label :comision %>
+                <%= form.select(:comision, Curso::CLASS_LIST_COMISION) %>
+              </div>
+
+              
+
+              <div class="actions">
+                   <%= form.submit %>  
+              </div>
+            <% end %>
+            </fieldset>    
+        </form>
+    </div>
+</body>
+
+
+
+  

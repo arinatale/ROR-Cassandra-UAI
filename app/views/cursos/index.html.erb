@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lista de Cursos</h1>
+
+<header>
+  <nav class="be-red white">
+    <ul class = "no-list row center-xs">
+      <li class ="col-md">
+      <%= link_to 'Agregar Curso', new_curso_path %>
+     </li>
+     <li class ="col-md">
+      <%= link_to 'Agregar Aula', new_aula_path %>
+     </li>
+    </ul>
+  </nav>
+</header>
+
+<body>
+<div id="main-container"> 
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Carrera</th>
+      <th>Cantidad Alumnos</th>
+      <th>Turno</th>
+      <th>Comision</th>
+      
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cursos.each do |curso| %>
+      <tr>
+        <td><%= curso.nombre %></td>
+        <td><%= curso.carrera %></td>
+        <td><%= curso.cantidadalumnos %></td>
+        <td><%= curso.turno %></td>
+        <td><%= curso.comision %></td>
+        <td><%= curso.asignado %></td>
+        <td><%= link_to 'Ver', curso %></td>
+        <td><%= link_to 'Editar', edit_curso_path(curso) %></td>
+        <td><%= link_to 'Borrar', curso, method: :delete, data: { confirm: 'Esta ud. seguro que desea eliminar?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+
+
+
+
+
+
+</body>

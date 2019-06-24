@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lista de Aulas</h1>
+
+<header>
+  <nav class="be-red white">
+    <ul class = "no-list row center-xs">
+     <li class ="col-md">
+      <%= link_to 'Agregar Curso', new_curso_path %>
+     </li>
+      <li class ="col-md">
+      <%= link_to 'Agregar Aula', new_aula_path %>
+     </li>
+    </ul>
+  </nav>
+</header>
+
+<table>
+  <thead>
+    <tr>
+      <th>Numero</th>
+      <th>Piso</th>
+      <th>Capacidad</th>
+      <th>Asignada</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+ 
+
+
+    <% @aulas.each do |aula| %>
+      <tr>
+        <td><%= aula.numero %></td>
+        <td><%= aula.piso %></td>
+        <td><%= aula.capacidad %></td>
+        <td><%= aula.asignado %></td>
+         <td><%= link_to 'Show', aula %></td>
+        <td><%= link_to 'Edit', edit_aula_path(aula) %></td>
+        <td><%= link_to 'Destroy', aula, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+               <td><%=  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+<h2>Cantidad de aulas cargadas: <%= Aula.connection.execute('select count(*) from aulas;').first['count'] %></h2>
+<h2>Cantidad de cursos cargados: <%= Curso.connection.execute('select count(*) from cursos;').first['count'] %></h2>
+
+<h2>Tutor: <%= @tutor %></h2>
+
+
+<br>

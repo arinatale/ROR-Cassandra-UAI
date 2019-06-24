@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @curso.nombre %>
+</p>
+
+<p>
+  <strong>Carrera:</strong>
+  <%= @curso.carrera %>
+</p>
+
+<p>
+  <strong>Cantidadalumnos:</strong>
+  <%= @curso.cantidadalumnos %>
+</p>
+
+<p>
+  <strong>Turno:</strong>
+  <%= @curso.turno %>
+</p>
+
+<p>
+  <strong>Comision:</strong>
+  <%= @curso.comision %>
+</p>
+
+<p>
+  <strong>Asignado:</strong>
+  <%= @curso.asignado %>
+</p>
+
+<%= link_to 'Edit', edit_curso_path(@curso) %> |
+<%= link_to 'Back', cursos_path %>

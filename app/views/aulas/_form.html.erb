@@ -1,0 +1,58 @@
+<head>
+    <title>Nuevo Curso</title>
+      <nav class="be-red white">
+    <ul class = "no-list row center-xs">
+      <li class ="col-md">
+      <%= link_to 'Agregar Curso', new_curso_path %>
+     </li>
+     <li class ="col-md">
+      <%= link_to 'lista de cursos', cursos_path %>
+     </li>
+    </ul>
+  </nav>
+</head>
+<body>
+  <%= form_with(model: aula, local: true) do |form| %>
+    <% if aula.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(aula.errors.count, "error") %> prohibited this aula from being saved:</h2>
+        <ul>
+        <% aula.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+  <div id="wrapper">
+     <form action="" method="post">
+       <fieldset>
+        <legend>NUEVO AULA</legend>
+        <div class="field">
+          <%= form.label :numero %>
+          <%= form.number_field :numero %>
+        </div>
+
+        <div class="field">
+          <%= form.label :piso %>
+          <%= form.number_field :piso %>
+        </div>
+
+        <div class="field">
+          <%= form.label :capacidad %>
+          <%= form.number_field :capacidad %>
+        </div>
+
+        <div class="field">
+          <%= form.label :asignada %>
+          <%= form.check_box :asignada %>
+        </div>
+
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+        <% end %>
+      </fieldset>    
+    </form>
+  </div>
+</body>
