@@ -4,12 +4,19 @@
 #RUBY ON RAILS CON CASSANDRA
 
 Grupo Nº5:
+
 Erika Peyrade
+
 Mariela de la Torre
+
 Héctor Martinotti
+
 Ariel Natale
+
 Solana Vidal
+
 Leda Varela
+
 
 Docente:
 Matías Teragni
