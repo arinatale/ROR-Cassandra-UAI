@@ -1,3 +1,5 @@
+
+
 <% @aulas = Aula.all %>
 <% @cursos = Curso.all %>
 
@@ -374,7 +376,7 @@
                     <% end %>
 
 
-                    <p>Los siguientes cursos no tienen aulas asignadas por exceso de alumnos en el curso:</p>
+                    <p><strong>Los siguientes cursos no tienen aulas asignadas por exceso de alumnos en el curso:</strong></p>
 
                     <% @curso_tm_sort.each do |c| %>
                     <% if c.asignado ==nil && c.cantidadalumnos > max %>                    
@@ -394,7 +396,7 @@
                     <% end %>
                     <% end %>
 
-                    <p>Los siguientes cursos no tienen aulas disponibles por falta de aulas:</p>
+                    <p><strong>Los siguientes cursos no tienen aulas disponibles por falta de aulas:</strong></p>
 
                     <% @curso_tm_sort.each do |c| %>
                     <% if c.asignado ==nil && c.cantidadalumnos <= max %>                    
