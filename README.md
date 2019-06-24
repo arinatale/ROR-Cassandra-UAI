@@ -61,8 +61,11 @@ Tambien instalamos la aplicación DevCenter para chequear la información que se
 Luego de lidiar con varias imcompatibilidades de gemas, encontramos conveniente instalar lo siguiente:
 
 source 'https://rubygems.org'
+
 gem 'cequel', '~> 3.2', '>= 3.2.1'
+
 gem 'cassandra-driver', '~> 3.2', '>= 3.2.3'
+
 
 y autogeneramos la configuración de la base con el comando "rails g cequel:configuration" y la generación de la instancia: "rake cequel:keyspace:create".
 
