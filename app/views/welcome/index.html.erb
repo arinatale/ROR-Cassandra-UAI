@@ -420,7 +420,7 @@
 
             <% else %>
             
-            <p> no hay <%= @cursoscargados %> cursos cargadas </p>
+            <p>  </p>
 
             <% end if %>
 
@@ -429,11 +429,21 @@
 
 <% else %>
 
+
+
+
 <p> No hay aulas cargadas </p>
+
+
+
 <p> Estos cursos no podrán ubicarse:</p>
 
+<% if @cursostodos != nil %>
 <% @cursostodos.each do |p| %>
 <p>Curso: <%= p.nombre %> - Comision: <%= p.comision %> - Turno: <%= p.turno %> - Capacidad: <%= p.cantidadalumnos %></p>
+<% else %>
+<p>No hay cursos cargados</p>
+<% end %>
 <% end %>
 
 <% end %>
